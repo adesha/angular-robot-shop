@@ -1,0 +1,11 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "data server for robot shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "adesha",
+  "license": "ISC"
+}
