@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { IProduct } from './product.module';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-catalog',
@@ -9,7 +10,8 @@ import { IProduct } from './product.module';
 export class CatalogComponent {
   products:IProduct[];
   filter:string='';
-  cart:IProduct[]=[];
+  private cartSvc:CartService=Inject(CartService)
+  
   constructor(){
     this.products= [
       {
@@ -195,6 +197,6 @@ export class CatalogComponent {
   }
 
   addToCart(product:IProduct){
-    this.cart.push(product)
+    this.cartSvc.add(product)
   }
 }
